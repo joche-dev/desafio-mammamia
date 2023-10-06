@@ -2,7 +2,7 @@ import { useState, createContext, useEffect } from 'react';
 
 export const Context = createContext();
 
-export default function Provider({ Children }) {
+export default function Provider({ children }) {
   const [pizzas, setPizzas] = useState([]);
 
   const getPizzas = async () => {
@@ -15,7 +15,7 @@ export default function Provider({ Children }) {
 
   return (
     <Context.Provider value={[pizzas, setPizzas]}>
-        {Children}
+        {children}
     </Context.Provider>
   );
 }
