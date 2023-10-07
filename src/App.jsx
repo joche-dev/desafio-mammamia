@@ -6,6 +6,7 @@ import Home from './views/Home';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Carrito from './views/Carrito';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/carrito" element={<Carrito />} />
         </Routes>
       </BrowserRouter>
     </Provider>

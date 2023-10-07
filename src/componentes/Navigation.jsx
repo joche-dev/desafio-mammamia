@@ -1,12 +1,18 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Container, Navbar } from 'react-bootstrap';
+import imgLogo from '../assets/imgs/Logo.png';
 
 export default function Navigation() {
   return (
-    <Navbar className="bg-body-tertiary">
-      <Container className='py-3'>
-        <NavLink to={'/'}>Pizzeria Mamma Mia!</NavLink>
-        <NavLink to={'/'}>🛒</NavLink>
+    <Navbar>
+      <Container className="py-3">
+        <Link to={'/'} className='logo'>
+          <img src={imgLogo} alt="Logo Pizza" />
+          <span>Pizzeria Mamma Mia!</span>
+        </Link>
+        <Link to={'/carrito'} className='cart'>
+            🛒
+        </Link>
       </Container>
     </Navbar>
   );
