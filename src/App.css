@@ -15,7 +15,7 @@ a {
 }
 
 .logo span {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .cart {
@@ -24,3 +24,14 @@ a {
     background-color: #EC0000;
 }
 
+.cart:hover {
+    background-color: #05A84B;
+}
+
+
+@media screen and (min-width: 576px) {
+    .logo span {
+        font-size: 1.7rem;
+    }
+    
+}
