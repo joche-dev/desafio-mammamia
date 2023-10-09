@@ -44,7 +44,7 @@ a {
   flex-direction: column;
   width: 21rem;
   padding: 1.2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -55,6 +55,14 @@ a {
 .home-body p {
   margin: 0;
   font-size: 0.7rem;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  font-size: .8rem;
 }
 
 @media screen and (min-width: 768px) {
