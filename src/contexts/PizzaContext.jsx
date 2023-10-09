@@ -13,8 +13,10 @@ export default function Provider({ children }) {
 
   useEffect(() => {getPizzas()}, []);
 
+  const globalState = {pizzas, setPizzas}
+
   return (
-    <Context.Provider value={[pizzas, setPizzas]}>
+    <Context.Provider value={globalState}>
         {children}
     </Context.Provider>
   );
