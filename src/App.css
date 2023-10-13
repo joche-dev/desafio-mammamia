@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
 * {
   font-family: 'Poppins', sans-serif;
-  box-sizing: border-box !important;
+}
+
+nav div{
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 a {
@@ -22,11 +26,11 @@ a {
 .cart {
   border-radius: 100%;
   padding: 0.6rem;
-  background-color: #ec0000;
+  background-color: #05a84b;
 }
 
 .cart:hover {
-  background-color: #05a84b;
+  background-color: #ec0000;
 }
 
 .home {
@@ -34,7 +38,7 @@ a {
   background-repeat: no-repeat;
   background-position: right;
   background-size: 25rem;
-  height: 20rem;
+  height: 16rem;
   display: flex;
   align-items: center;
 }
@@ -62,7 +66,13 @@ ul {
 }
 
 li {
-  font-size: .8rem;
+  font-size: 0.8rem;
+}
+
+button {
+  background-color: #ec0000 !important;
+  font-size: .9rem !important;
+  border: none !important;
 }
 
 @media screen and (min-width: 768px) {

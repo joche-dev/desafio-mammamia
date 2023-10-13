@@ -4,8 +4,8 @@ import imgLogo from '../assets/imgs/Logo.png';
 
 export default function Navigation() {
   return (
-    <Navbar>
-      <Container className="py-3">
+    <Navbar sticky="top">
+      <Container className="py-3 border rounded-2">
         <Link to={'/'} className='logo'>
           <img src={imgLogo} alt="Logo Pizza" />
           <span>Pizzeria Mamma Mia!</span>

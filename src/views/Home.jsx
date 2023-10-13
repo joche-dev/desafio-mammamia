@@ -1,9 +1,11 @@
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Context } from '../contexts/PizzaContext';
 
 export default function Home() {
   const { pizzas } = useContext(Context);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -20,22 +22,22 @@ export default function Home() {
               <Card>
                 <Card.Img src={pizza.img} alt={pizza.name} />
                 <Card.Header>
-                  <Card.Title className='fw-bold'>{pizza.name}</Card.Title>
+                  <Card.Text className='fw-bold m-0'>{pizza.name}</Card.Text>
                 </Card.Header>
                 <Card.Body>
-                  <Card.Text>
                     Ingredientes:
                     <ul>
-                      {pizza.ingredients.map((ingrediente) => (
-                        <li>🍕 {ingrediente}</li>
+                      {pizza.ingredients.map((ingrediente, index) => (
+                        <li key={index}>🍕 {ingrediente}</li>
                       ))}
                     </ul>
-                  </Card.Text>
                 </Card.Body>
                 <Card.Footer className="text-center">
-                  <Card.Text className='fw-bold'>{pizza.price.toLocaleString('es-CL', {style:'currency', currency:'CLP'})}</Card.Text>
-                  <Button variant="success">Ver Más</Button>{' '}
-                  <Button variant="success">Añadir</Button>
+                  <Card.Text className='fw-bold mb-2'>{pizza.price.toLocaleString('es-CL', {style:'currency', currency:'CLP'})}</Card.Text>
+                  <Card.Text className='d-flex justify-content-around'>
+                    <Button onClick={()=>navigate(`/pizza/${pizza.id}`)}>Ver más</Button>
+                    <Button>Añadir <i className="bi bi-cart-plus"></i></Button>
+                  </Card.Text>
                 </Card.Footer>
               </Card>
             </Col>
