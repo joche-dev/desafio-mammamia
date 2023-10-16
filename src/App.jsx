@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Carrito from './views/Carrito';
 import Pizza from './views/Pizza';
+import NotFound from './views/NotFound';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/pizza/:id" element={<Pizza />} />
           <Route path="/carrito" element={<Carrito />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </Provider>
