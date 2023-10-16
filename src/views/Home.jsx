@@ -2,9 +2,10 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Context } from '../contexts/PizzaContext';
+import IconCart from '../componentes/IconCart';
 
 export default function Home() {
-  const { pizzas } = useContext(Context);
+  const { pizzas, addCart } = useContext(Context);
   const navigate = useNavigate();
 
   return (
@@ -22,7 +23,7 @@ export default function Home() {
               <Card>
                 <Card.Img src={pizza.img} alt={pizza.name} />
                 <Card.Header>
-                  <Card.Text className='fw-bold m-0'>{pizza.name}</Card.Text>
+                  <span className='text-capitalize fw-bold'>{pizza.name}</span>
                 </Card.Header>
                 <Card.Body>
                     Ingredientes:
@@ -36,7 +37,7 @@ export default function Home() {
                   <Card.Text className='fw-bold mb-2'>{pizza.price.toLocaleString('es-CL', {style:'currency', currency:'CLP'})}</Card.Text>
                   <Card.Text className='d-flex justify-content-around'>
                     <Button onClick={()=>navigate(`/pizza/${pizza.id}`)}>Ver más</Button>
-                    <Button>Añadir <i className="bi bi-cart-plus"></i></Button>
+                    <Button onClick={()=>addCart(pizza)}>Añadir <IconCart tamaño='.9rem' color='white'/> </Button>
                   </Card.Text>
                 </Card.Footer>
               </Card>

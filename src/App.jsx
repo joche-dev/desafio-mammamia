@@ -15,8 +15,9 @@ function App() {
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path='/pizza/:id' element={<Pizza />} />
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/pizza/:id" element={<Pizza />} />
           <Route path="/carrito" element={<Carrito />} />
         </Routes>
       </BrowserRouter>

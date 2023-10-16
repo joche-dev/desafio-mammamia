@@ -26,11 +26,15 @@ a {
 .cart {
   border-radius: 100%;
   padding: 0.6rem;
-  background-color: #05a84b;
+  background-color: #ec0000;
+  color: #fff;
 }
 
-.cart:hover {
+.cart-price {
+  border-radius: .5rem;
+  padding: 0.5rem;
   background-color: #ec0000;
+  color: #fff;
 }
 
 .home {
