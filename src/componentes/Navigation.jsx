@@ -10,7 +10,7 @@ export default function Navigation() {
 
   return (
     <Navbar sticky="top">
-      <Container className="py-3 border rounded-2">
+      <Container>
         <Link to={'/home'} className="logo">
           <img src={imgLogo} alt="Logo Pizza" />
           <span>Pizzeria Mamma Mia!</span>

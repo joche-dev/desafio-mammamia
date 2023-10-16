@@ -28,7 +28,7 @@ export default function Provider({ children }) {
     }
   };
 
-  const totalCart = cart?.reduce(
+  const totalCart = cart.reduce(
     (acumulador, { price, count }) => acumulador + price * count, 0
   );
 
