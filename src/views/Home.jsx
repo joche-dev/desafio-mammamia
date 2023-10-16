@@ -38,7 +38,7 @@ export default function Home() {
                     {monedaLocal(pizza.price)}
                   </Card.Text>
                   <Card.Text className="d-flex justify-content-around">
-                    <Button onClick={() => navigate(`/pizza/${pizza.id}`)}>
+                    <Button onClick={() => navigate(`/desafio-mammamia/pizza/${pizza.id}`)}>
                       Ver más
                     </Button>
                     <Button onClick={() => addCart(pizza)}>

@@ -11,11 +11,11 @@ export default function Navigation() {
   return (
     <Navbar sticky="top">
       <Container>
-        <Link to={'/home'} className="logo">
+        <Link to={'/desafio-mammamia/home'} className="logo">
           <img src={imgLogo} alt="Logo Pizza" />
           <span>Pizzeria Mamma Mia!</span>
         </Link>
-        <Link to={'/carrito'} className={totalCart ? 'cart-price' : 'cart'}>
+        <Link to={'/desafio-mammamia/carrito'} className={totalCart ? 'cart-price' : 'cart'}>
           <IconCart tamaño="1.3rem" color="white" />
           {totalCart ? '  ' + monedaLocal(totalCart) : null}
         </Link>

@@ -17,9 +17,9 @@ function App() {
         <Navigation />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/pizza/:id" element={<Pizza />} />
-          <Route path="/carrito" element={<Carrito />} />
+          <Route path="/desafio-mammamia/home" element={<Home />} />
+          <Route path="/desafio-mammamia/pizza/:id" element={<Pizza />} />
+          <Route path="/desafio-mammamia/carrito" element={<Carrito />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
