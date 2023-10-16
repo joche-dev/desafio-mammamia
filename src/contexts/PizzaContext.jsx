@@ -7,7 +7,7 @@ export default function Provider({ children }) {
   const [cart, setCart] = useState([]);
 
   const getPizzas = async () => {
-    const res = await fetch('/pizzas.json');
+    const res = await fetch('/desafio-mammamia/pizzas.json');
     const data = await res.json();
     setPizzas(data);
   };

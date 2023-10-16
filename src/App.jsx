@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route index element={<Home />} />
+          <Route path="/desafio-mammamia/" element={<Home />} />
           <Route path="/desafio-mammamia/home" element={<Home />} />
           <Route path="/desafio-mammamia/pizza/:id" element={<Pizza />} />
           <Route path="/desafio-mammamia/carrito" element={<Carrito />} />
