@@ -3,7 +3,8 @@ import { useContext } from 'react';
 import { Context } from '../contexts/PizzaContext';
 
 export default function PizzasCarrito() {
-  const { cart, decreaseCount, increaseCount, totalCart, monedaLocal } = useContext(Context);
+  const { cart, decreaseCount, increaseCount, totalCart, monedaLocal } =
+    useContext(Context);
 
   return (
     <>
@@ -16,11 +17,11 @@ export default function PizzasCarrito() {
               </td>
               <td className="w-75 text-capitalize">{pizza.name}</td>
               <td>
-                <Button onClick={()=>decreaseCount(index)}>-</Button>
+                <Button onClick={() => decreaseCount(index)}>-</Button>
               </td>
               <td>{pizza.count}</td>
               <td>
-                <Button onClick={()=>increaseCount(index)}>+</Button>
+                <Button onClick={() => increaseCount(index)}>+</Button>
               </td>
               <td>=</td>
               <td>{monedaLocal(pizza.count * pizza.price)}</td>
