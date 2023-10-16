@@ -17,7 +17,10 @@ export default function Provider({ children }) {
   }, []);
 
   const monedaLocal = (valor) => {
-    return valor.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' });
+    return valor.toLocaleString('es-CL', {
+      style: 'currency',
+      currency: 'CLP',
+    });
   };
 
   const addCart = (pizza) => {
@@ -32,13 +35,38 @@ export default function Provider({ children }) {
     }
   };
 
+  const increaseCount = (index) => {
+    cart[index].count++;
+    setCart([...cart]);
+  };
+
+  const decreaseCount = (index) => {
+    if (cart[index].count === 1) {
+      cart.splice(index, 1);
+    } else {
+      cart[index].count--;
+    }
+    setCart([...cart]);
+  };
+
   const totalCart = cart.reduce(
     (acumulador, { price, count }) => acumulador + price * count,
     0
   );
 
   return (
-    <Context.Provider value={{ pizzas, cart, setCart, addCart, totalCart, monedaLocal }}>
+    <Context.Provider
+      value={{
+        pizzas,
+        cart,
+        setCart,
+        addCart,
+        decreaseCount,
+        increaseCount,
+        totalCart,
+        monedaLocal,
+      }}
+    >
       {children}
     </Context.Provider>
   );
