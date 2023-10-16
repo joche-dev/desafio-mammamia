@@ -33,6 +33,6 @@ export default function Provider({ children }) {
   );
 
   return (
-    <Context.Provider value={{ pizzas, addCart, totalCart }}>{children}</Context.Provider>
+    <Context.Provider value={{ pizzas, cart, setCart, addCart, totalCart }}>{children}</Context.Provider>
   );
 }

@@ -82,6 +82,24 @@ button {
   border: none !important;
 }
 
+table {
+  font-size: .8rem;
+}
+
+table img {
+  width: 3rem;
+  border-radius: .3rem;
+}
+
+table td {
+  vertical-align: middle;
+}
+
+table button {
+  background-color: #05a84b !important;
+  padding: .3rem .5rem !important;
+}
+
 @media screen and (min-width: 768px) {
   .logo span {
     font-size: 1.7rem;
@@ -102,5 +120,18 @@ button {
 
   .home-body h1 {
     font-size: 3rem;
+  }
+
+  .carrito {
+    max-width: 70%;
+  }
+
+  table {
+    font-size: 1rem;
+  }
+
+  table img {
+    width: 5rem;
+    border-radius: .5rem;
   }
 }
