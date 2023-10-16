@@ -6,7 +6,7 @@ import IconCart from '../componentes/IconCart';
 
 export default function Pizza() {
   const { id } = useParams();
-  const { pizzas, addCart } = useContext(Context);
+  const { pizzas, addCart, monedaLocal } = useContext(Context);
 
   return (
     <Container>
@@ -35,13 +35,10 @@ export default function Pizza() {
               <Card.Footer className="text-center">
                 <Card.Text className="d-flex justify-content-around align-items-center">
                   <span className="fw-bold fs-5">
-                    {pizza.price.toLocaleString('es-CL', {
-                      style: 'currency',
-                      currency: 'CLP',
-                    })}
+                    {monedaLocal(pizza.price)}
                   </span>
-                  <Button onClick={()=>addCart(pizza)}>
-                    Añadir <IconCart tamaño='.9rem' color='white'/>
+                  <Button onClick={() => addCart(pizza)}>
+                    Añadir <IconCart tamaño=".9rem" color="white" />
                   </Button>
                 </Card.Text>
               </Card.Footer>

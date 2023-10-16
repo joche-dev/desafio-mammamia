@@ -6,7 +6,7 @@ import { Context } from '../contexts/PizzaContext';
 import IconCart from './IconCart';
 
 export default function Navigation() {
-  const { totalCart } = useContext(Context);
+  const { totalCart, monedaLocal } = useContext(Context);
 
   return (
     <Navbar sticky="top">
@@ -16,9 +16,8 @@ export default function Navigation() {
           <span>Pizzeria Mamma Mia!</span>
         </Link>
         <Link to={'/carrito'} className={totalCart ? 'cart-price' : 'cart'}>
-          <IconCart tamaño='1.3rem' color='white' />
-          {totalCart
-            ? '  ' + totalCart.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' }) : null}
+          <IconCart tamaño="1.3rem" color="white" />
+          {totalCart ? '  ' + monedaLocal(totalCart) : null}
         </Link>
       </Container>
     </Navbar>

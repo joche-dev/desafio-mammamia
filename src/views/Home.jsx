@@ -5,7 +5,7 @@ import { Context } from '../contexts/PizzaContext';
 import IconCart from '../componentes/IconCart';
 
 export default function Home() {
-  const { pizzas, addCart } = useContext(Context);
+  const { pizzas, addCart, monedaLocal } = useContext(Context);
   const navigate = useNavigate();
 
   return (
@@ -23,21 +23,27 @@ export default function Home() {
               <Card>
                 <Card.Img src={pizza.img} alt={pizza.name} />
                 <Card.Header>
-                  <span className='text-capitalize fw-bold'>{pizza.name}</span>
+                  <span className="text-capitalize fw-bold">{pizza.name}</span>
                 </Card.Header>
                 <Card.Body>
-                    Ingredientes:
-                    <ul>
-                      {pizza.ingredients.map((ingrediente, index) => (
-                        <li key={index}>🍕 {ingrediente}</li>
-                      ))}
-                    </ul>
+                  Ingredientes:
+                  <ul>
+                    {pizza.ingredients.map((ingrediente, index) => (
+                      <li key={index}>🍕 {ingrediente}</li>
+                    ))}
+                  </ul>
                 </Card.Body>
                 <Card.Footer className="text-center">
-                  <Card.Text className='fw-bold mb-2'>{pizza.price.toLocaleString('es-CL', {style:'currency', currency:'CLP'})}</Card.Text>
-                  <Card.Text className='d-flex justify-content-around'>
-                    <Button onClick={()=>navigate(`/pizza/${pizza.id}`)}>Ver más</Button>
-                    <Button onClick={()=>addCart(pizza)}>Añadir <IconCart tamaño='.9rem' color='white'/> </Button>
+                  <Card.Text className="fw-bold mb-2">
+                    {monedaLocal(pizza.price)}
+                  </Card.Text>
+                  <Card.Text className="d-flex justify-content-around">
+                    <Button onClick={() => navigate(`/pizza/${pizza.id}`)}>
+                      Ver más
+                    </Button>
+                    <Button onClick={() => addCart(pizza)}>
+                      Añadir <IconCart tamaño=".9rem" color="white" />{' '}
+                    </Button>
                   </Card.Text>
                 </Card.Footer>
               </Card>
