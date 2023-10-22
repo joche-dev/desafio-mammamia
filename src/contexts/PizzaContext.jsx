@@ -6,22 +6,22 @@ export default function Provider({ children }) {
   const [pizzas, setPizzas] = useState([]);
   const [cart, setCart] = useState([]);
 
-  const getPizzas = async () => {
-    const res = await fetch('/desafio-mammamia/pizzas.json');
-    const data = await res.json();
-    setPizzas(data);
-  };
-
   useEffect(() => {
+    const getPizzas = async () => {
+      try {
+        const res = await fetch('/desafio-mammamia/pizzas.json');
+        const data = await res.json();
+        setPizzas(data);
+      } catch (error) {
+        console.error('Error fetching pizzas:', error);
+      }
+    };
+
     getPizzas();
   }, []);
 
-  const monedaLocal = (valor) => {
-    return valor.toLocaleString('es-CL', {
-      style: 'currency',
-      currency: 'CLP',
-    });
-  };
+  const monedaLocal = (valor) =>
+    valor.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' });
 
   const addCart = (pizza) => {
     const foundPizza = cart.findIndex((cartPizza) => cartPizza.id === pizza.id);
